@@ -1,10 +1,3 @@
-//
-//  CardLayout.swift
-//  Scry
-//
-//  Created by Jacobs, Joe on 9/4/25.
-//
-
 import Foundation
 import SwiftUI
 

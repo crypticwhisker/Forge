@@ -1,10 +1,3 @@
-//
-//  AbsoluteURL.swift
-//  Stack
-//
-//  Created by Jacobs, Joe on 2/26/26.
-//
-
 import Foundation
 
 // Endpoint for when we already have the full Scryfall URL

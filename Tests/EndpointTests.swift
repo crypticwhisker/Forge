@@ -1,0 +1,29 @@
+import Testing
+@testable import Forge
+
+
+struct EndpointTests {
+
+    @Test func buildEndPointURL() async throws {
+        
+        let testEndpoint = GetCardsSearch(
+            query: "sauron",
+            order: .cmc,
+            includeExtras: true
+        )
+        let url = try testEndpoint.makeURL()
+        
+        #expect(url.absoluteString == "https://api.scryfall.com/cards/search?q=sauron&order=cmc&include_extras=true")
+        
+    }
+
+    @Test func buildTagEndPoint() async throws {
+        
+        let testEndpoint = GetBulkData(type: "oracle-tags")
+        let url = try testEndpoint.makeURL()
+        
+        #expect(url.absoluteString == "https://api.scryfall.com/bulk-data/oracle-tags")
+        
+    }
+    
+}
