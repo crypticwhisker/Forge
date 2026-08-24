@@ -1,10 +1,3 @@
-//
-//  File.swift
-//  Forge
-//
-//  Created by Jacobs, Joe on 8/10/26.
-//
-
 import Foundation
 
 public struct CardLike {

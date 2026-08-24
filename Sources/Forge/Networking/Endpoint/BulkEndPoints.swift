@@ -1,32 +1,16 @@
-//
-//  BulkEndPoints.swift
-//  Stack
-//
-//  Created by Jacobs, Joe on 7/9/26.
-//
-
 import Foundation
 
+// https://scryfall.com/docs/api/bulk-data/all
 struct GetBulkData: Endpoint {
-    let path: String = "/bulk-data"
+    let path: String
     let method: EndpointMethod = .get
-    var parameters: [URLQueryItem]
-}
+    let parameters: [URLQueryItem] = []
 
-struct GetBulkDataID: Endpoint {
-    let id: String
-    var path: String {
-        return "/bulk-data/\(id)"
+    init(type: String) {
+        path = "/bulk-data/\(type)"
     }
-    let method: EndpointMethod = .get
-    var parameters: [URLQueryItem]
-}
 
-struct GetBulkDataType: Endpoint {
-    let type: String
-    var path: String {
-        return "/bulk-data/\(type)"
+    init(id: String) {
+        path = "/bulk-data/\(id)"
     }
-    let method: EndpointMethod = .get
-    var parameters: [URLQueryItem]
 }
