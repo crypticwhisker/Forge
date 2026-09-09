@@ -26,4 +26,11 @@ struct EndpointTests {
         
     }
     
+    @Test func buildAutoCompleteEndPoint() async throws {
+        let testEndpoint = GetCardsAutoComplete(query: "sauron")
+        
+        let url = try testEndpoint.makeURL()
+        
+        #expect(url.absoluteString == "https://api.scryfall.com/cards/autocomplete?q=sauron")
+    }
 }
