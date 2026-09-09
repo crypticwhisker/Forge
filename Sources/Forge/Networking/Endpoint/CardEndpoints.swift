@@ -65,6 +65,7 @@ struct GetCardsAutoComplete: Endpoint {
         includeExtras: Bool? = nil
     ) {
         self.parameters = [
+            URLQueryItem(name: "q", value: query),
             URLQueryItem(name: "include_extras", value: includeExtras?.description)
         ]
     }
