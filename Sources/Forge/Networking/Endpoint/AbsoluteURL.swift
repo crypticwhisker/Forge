@@ -1,7 +1,8 @@
 import Foundation
 
 // Endpoint for when we already have the full Scryfall URL
-struct AbsoluteURL: Endpoint {
+struct AbsoluteURL<Response: Decodable>: Endpoint {
+
     let url: String
     
     var path: String { url }

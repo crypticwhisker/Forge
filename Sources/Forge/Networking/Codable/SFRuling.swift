@@ -9,7 +9,7 @@ import Foundation
 
 // https://scryfall.com/docs/api/rulings
 
-public struct SFRuling: Codable, Hashable {
+public struct SFRuling: Codable, Hashable, Sendable {
     public let object: String
     public let oracleID: String
     public let source: String

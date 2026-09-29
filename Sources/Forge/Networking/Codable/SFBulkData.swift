@@ -9,7 +9,7 @@ import Foundation
 
 // https://scryfall.com/docs/api/bulk-data
 
-public struct SFBulkData: Codable, Hashable {
+public struct SFBulkData: Codable, Hashable, Sendable {
     public let id: String
     public let uri: String
     public let type: String

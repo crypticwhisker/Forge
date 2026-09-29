@@ -9,7 +9,7 @@ import Foundation
 
 // https://scryfall.com/docs/api/catalogs
 
-public struct SFCatalog: Decodable {
+public struct SFCatalog: Decodable, Sendable {
     public let object: String
     public let uri: String?
     public let totalValues: Int
