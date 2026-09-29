@@ -9,7 +9,7 @@ import Foundation
 
 // https://scryfall.com/docs/api/lists
 
-public struct SFList <T: Codable & Hashable>: Codable, Sequence, Hashable {
+public struct SFList <T: Codable & Hashable & Sendable>: Codable, Sequence, Hashable, Sendable {
     public let object: String
     public let data: [T]
     public let hasMore: Bool

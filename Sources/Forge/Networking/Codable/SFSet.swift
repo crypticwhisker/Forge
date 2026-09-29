@@ -9,7 +9,7 @@ import Foundation
 
 // https://scryfall.com/docs/api/sets
 
-public struct SFSet: Codable, Hashable {
+public struct SFSet: Codable, Hashable, Sendable {
     public let object: String
     public let id: String
     public let code: String

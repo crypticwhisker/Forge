@@ -4,6 +4,7 @@ import Foundation
 
 // https://scryfall.com/docs/api/cards/search
 struct GetCardsSearch: Endpoint {
+    typealias Response = SFList<SFCard>
     let path: String = "/cards/search"
     let method: EndpointMethod = .get
     var parameters: [URLQueryItem]
@@ -31,6 +32,7 @@ struct GetCardsSearch: Endpoint {
 
 // https://scryfall.com/docs/api/cards/named
 struct GetCardsNamed: Endpoint {
+    typealias Response = SFCard
     let path: String = "/cards/named"
     let method: EndpointMethod = .get
     var parameters: [URLQueryItem] = []
@@ -56,6 +58,7 @@ struct GetCardsNamed: Endpoint {
 
 // https://scryfall.com/docs/api/cards/autocomplete
 struct GetCardsAutoComplete: Endpoint {
+    typealias Response = SFCatalog
     let path: String = "/cards/autocomplete"
     let method: EndpointMethod = .get
     var parameters: [URLQueryItem] = []
@@ -74,6 +77,7 @@ struct GetCardsAutoComplete: Endpoint {
 
 // https://scryfall.com/docs/api/cards/collector
 struct GetCardsCollector: Endpoint {
+    typealias Response = SFCard
     let path: String = "/cards/collector/"
     let method: EndpointMethod = .get
     var parameters: [URLQueryItem] = []
@@ -96,6 +100,8 @@ struct GetCardsCollector: Endpoint {
 // https://scryfall.com/blog/upcoming-api-changes-to-scryfall-image-uris-and-download-uris-224
 // This particular endpoint needs to be public in case clients want to compute a image URI from a scryfall ID
 public struct GetCardsID: Endpoint {
+    
+    public typealias Response = SFCard
     
     public let scryfallID: String
     
@@ -142,6 +148,7 @@ public struct GetCardsID: Endpoint {
 
 // https://scryfall.com/docs/api/cards/random
 struct GetCardsRandom: Endpoint {
+    typealias Response = SFCard
     var path: String = "/cards/random"
     var method: EndpointMethod = .get
     var parameters: [URLQueryItem] = []
@@ -149,6 +156,7 @@ struct GetCardsRandom: Endpoint {
 
 // https://scryfall.com/docs/api/rulings/id
 struct GetCardRulings: Endpoint {
+    typealias Response = SFList<SFRuling>
     let scryfallID: String
     
     var path: String {

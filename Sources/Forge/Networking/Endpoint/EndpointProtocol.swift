@@ -1,6 +1,7 @@
 import Foundation
 
 public protocol Endpoint {
+    associatedtype Response: Decodable
     var path: String { get }
     var method: EndpointMethod { get }
     var parameters: [URLQueryItem] { get }
@@ -12,15 +13,15 @@ public enum EndpointMethod {
     case get, post
 }
 
-public enum EndpointUnique: String {
+public enum EndpointUnique: String, Sendable {
     case cards, art, prints
 }
 
-public enum EndpointDirection: String {
+public enum EndpointDirection: String, Sendable {
     case auto, asc, desc
 }
  
-public enum EndpointOrder: String {
+public enum EndpointOrder: String, Sendable {
     case name, set, released, rarity, color, usd, tix, eur, cmc, power, toughness, edhrec, penny, artist, review
 }
 

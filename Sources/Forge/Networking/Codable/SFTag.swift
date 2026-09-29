@@ -9,7 +9,7 @@ import Foundation
 
 // https://scryfall.com/docs/api/tags
 
-public struct SFTag: Codable, Hashable {
+public struct SFTag: Codable, Hashable, Sendable {
     public let object: String
     public let id: String
     public let slug: String
@@ -23,7 +23,7 @@ public struct SFTag: Codable, Hashable {
     public let taggings: [SFTagging]
 }
 
-public struct SFTagging: Codable, Hashable {
+public struct SFTagging: Codable, Hashable, Sendable {
     public let illustrationID: String?
     public let oracleID: String?
     public let weight: String

@@ -9,7 +9,7 @@ import Foundation
 
 // https://scryfall.com/docs/api/card-symbols
 
-public struct SFCardSymbol: Codable, Hashable {
+public struct SFCardSymbol: Codable, Hashable, Sendable {
     public let object: String
     public let symbol: String
     public let looseVariant: String?
